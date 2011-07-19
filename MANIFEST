@@ -21,5 +21,6 @@ MYMETA.json
 MYMETA.yml
 README
 t/00-load.t
+t/basic.t
+t/inherited.t
 t/registry.t
-t/workflows.t

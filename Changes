@@ -1,0 +1,5 @@
+changes from 0.05 to 0.06
+=========================
+
+  * fixed Moose role application bug when workflow classes extend
+    another class

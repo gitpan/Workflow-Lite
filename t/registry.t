@@ -24,6 +24,7 @@ done_testing;
 BEGIN {
   package MyWorkflow;
 
+  use namespace::autoclean;
   use Test::More;
   use Workflow::Lite;
 

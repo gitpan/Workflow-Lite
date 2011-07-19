@@ -3,25 +3,28 @@ package Workflow::Lite;
 use namespace::autoclean;
 use Moose qw();
 use Moose::Exporter;
+use Workflow::Lite::Role::Workflow;
 
-our $VERSION = '0.05';
+
+our $VERSION = '0.06';
 $VERSION = eval $VERSION;
 
 
-my ( $import, $unimport, $init_meta ) =
-  Moose::Exporter->setup_import_methods(
-    with_caller        => [qw( steps step )],
-    also             => [qw( Moose )],
-    base_class_roles => [qw( Workflow::Lite::Role::Workflow )],
-  )
-;
+Moose::Exporter->setup_import_methods(
+  with_caller => [qw( steps step )],
+  also        => [qw( Moose )],
+);
 
 
 sub init_meta {
   my ( $class, %args ) = @_;
 
   Moose->init_meta( %args );
-  $class->$init_meta( %args );
+
+  my $meta = $args{for_class}->meta;
+  Workflow::Lite::Role::Workflow->meta->apply( $meta );
+
+  $meta
 }
 
 sub steps {
