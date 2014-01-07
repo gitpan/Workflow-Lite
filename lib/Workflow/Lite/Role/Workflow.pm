@@ -43,6 +43,8 @@ sub is_flowing { $_[0]->_flowing }
 1
 __END__
 
+=pod
+
 =head1 NAME
 
 Workflow::Lite::Role::Workflow - A role comprising the main functionality for workflows
@@ -98,41 +100,33 @@ Workflow::Lite::Role::Workflow - A role comprising the main functionality for wo
 
 =head1 DESCRIPTION
 
-C<Workflow::Lite::Role::Workflow> is a role that implements the
+Workflow::Lite::Role::Workflow is a role that implements the
 functionality necessary for handling workflows.  This role is
 applied automatically when C<use>ing L<Workflow::Lite|Workflow::Lite>.
 
 =head1 CLASS ATTRIBUTES
 
-=over 2
-
-=item B<_steps>
+=head2 _steps
 
 A HashRef that contains the defined steps for the class.  Steps
 are simply CodeRefs that get called when the named step is
 executed in a call to C<work()>.
 
-=back
-
 =head1 OBJECT ATTRIBUTES
 
-=over 2
-
-=item B<_step>
+=head2 _step
 
 Contains the name of the step to be executed upon the next call
 to C<work()>.  This defaults to C<'START'>, but can be overridden
 if necessary.
 
-=item B<_flowing>
+=head2 _flowing
 
 A boolean value that provides the flowing status of the workflow.
 
-=back
-
 =head1 OBJECT METHODS
 
-=item B<work( [@args] )>
+=head2 work( [@args] )
 
 Runs the handler for the current step.  Any arguments provided
 in C<@args> are passed to the handler.  Handlers are run as object
@@ -141,21 +135,19 @@ is passed as-is back from C<work()>.  If the workflow is not
 currently flowing or the current step does not have a handler,
 an exception is thrown.
 
-=item B<flow( $step )>
+=head2 flow( $step )
 
 Flows to the step named by C<$step>.  If C<$step> has not been
 previously defined, an exception is thrown.
 
-=item B<end()>
+=head2 end()
 
 Halts the workflow.  Further calls to C<work()> will result in
 an exception being thrown.
 
-=item B<is_flowing()>
+=head2 is_flowing()
 
 Returns true if the workflow is still flowing, false otherwise.
-
-=back
 
 =head1 BUGS
 
@@ -168,7 +160,7 @@ jason hord E<lt>pravus@cpan.orgE<gt>
 
 =head1 SEE ALSO
 
-=over 2
+=over 4
 
 =item L<Workflow::Lite>
 
@@ -176,7 +168,7 @@ jason hord E<lt>pravus@cpan.orgE<gt>
 
 =head1 COPYRIGHT
 
-Copyright (c) 2011, jason hord
+Copyright (c) 2011-2014, jason hord
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

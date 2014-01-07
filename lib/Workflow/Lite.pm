@@ -6,7 +6,7 @@ use Moose::Exporter;
 use Workflow::Lite::Role::Workflow;
 
 
-our $VERSION = '0.06';
+our $VERSION = '0.07';
 $VERSION = eval $VERSION;
 
 
@@ -40,6 +40,8 @@ sub step { $_[0]->_steps->{$_[1]} = $_[2] }
 
 1
 __END__
+
+=pod
 
 =head1 NAME
 
@@ -96,7 +98,7 @@ Workflow::Lite - A very simplistic workflow framework
 
 =head1 DESCRIPTION
 
-C<Workflow::Lite> is a very simple framework for defining and
+Workflow::Lite is a very simple framework for defining and
 implementing workflows.  This module is actually just a wrapper
 that provides helpers for implementing a workflow object.
 
@@ -131,17 +133,13 @@ handler is passed through C<work()> to the caller as-is.
 
 =head1 EXPORTED FUNCTIONS
 
-=over 2
-
-=item B<step $name =E<gt> $code>
+=head2 step $name =E<gt> $code
 
 Used to define a step named C<$name> with the handler C<$code>.
 
-=item B<steps $name =E<gt> $code, [...]>
+=head2 steps $name =E<gt> $code, [...]
 
 Same as above, but allows multiple steps to be defined at once.
-
-=back
 
 =head1 BUGS
 
@@ -154,7 +152,7 @@ jason hord E<lt>pravus@cpan.orgE<gt>
 
 =head1 SEE ALSO
 
-=over 2
+=over 4
 
 =item L<Workflow::Lite::Registry>
 
@@ -164,7 +162,7 @@ jason hord E<lt>pravus@cpan.orgE<gt>
 
 =head1 COPYRIGHT
 
-Copyright (c) 2011, jason hord
+Copyright (c) 2011-2014, jason hord
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

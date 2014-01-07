@@ -44,6 +44,8 @@ __PACKAGE__->meta->make_immutable;
 1
 __END__
 
+=pod
+
 =head1 NAME
 
 Workflow::Lite::Registry - A workflow registry
@@ -74,7 +76,7 @@ Workflow::Lite::Registry - A workflow registry
 
 =head1 DESCRIPTION
 
-C<Workflow::Lite::Registry> is meant to be used as a base class
+Workflow::Lite::Registry is meant to be used as a base class
 to application-specific workflow registries that can be used
 to shorten class names.  L<Workflow::Lite|Workflow::Lite> classes
 are registered and given a short, unique name that can be referenced
@@ -84,29 +86,23 @@ be used based on configuration or user input.
 
 =head1 CLASS ATTRIBUTES
 
-=over 2
-
-=item B<_registry>
+=head2 _registry
 
 A HashRef that contains the workflow registry.
 
-=back
-
 =head1 CLASS METHODS
 
-=over 2
-
-=item B<register( $id, $workflow_class )>
+=head2 register( $id, $workflow_class )
 
 Registers a new workflow class into the registry under the given id.
 The workflow class is also loaded for convenience.
 
-=item B<workflow_class( $id )>
+=head2 workflow_class( $id )
 
 Returns the workflow class that is associated with the given id in
 the registry.
 
-=item B<new_workflow( $id, @args )>
+=head2 new_workflow( $id, @args )
 
 Instantiates a new workflow object by looking up the workflow class
 associated with the given id and then calling C<new()> with the 
@@ -125,7 +121,7 @@ jason hord E<lt>pravus@cpan.orgE<gt>
 
 =head1 SEE ALSO
 
-=over 2
+=over 4
 
 =item L<Workflow::Lite>
 
@@ -133,7 +129,7 @@ jason hord E<lt>pravus@cpan.orgE<gt>
 
 =head1 COPYRIGHT
 
-Copyright (c) 2011, jason hord
+Copyright (c) 2011-2014, jason hord
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
