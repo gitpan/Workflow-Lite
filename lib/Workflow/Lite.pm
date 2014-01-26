@@ -6,8 +6,7 @@ use Moose::Exporter;
 use Workflow::Lite::Role::Workflow;
 
 
-our $VERSION = '0.07';
-$VERSION = eval $VERSION;
+our $VERSION = '0.08';
 
 
 Moose::Exporter->setup_import_methods(

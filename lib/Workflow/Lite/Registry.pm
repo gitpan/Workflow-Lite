@@ -1,7 +1,7 @@
 package Workflow::Lite::Registry;
 
 use namespace::autoclean;
-use Class::MOP;
+use Class::Load;
 use Moose;
 use MooseX::ClassAttribute;
 
@@ -16,7 +16,7 @@ sub register {
   my ( $class, @pairs ) = @_;
 
   while( my ( $id, $workflow_class ) = splice @pairs, 0, 2 ) {
-    Class::MOP::load_class( $workflow_class );
+    Class::Load::load_class( $workflow_class );
     $class->_registry->{$id} = $workflow_class;
   }
 }

@@ -5,11 +5,11 @@ use inc::Module::Install;
 
 name 'Workflow-Lite';
 
-all_from 'lib/Workflow/Lite.pm';
 license  'MIT';
+all_from 'lib/Workflow/Lite.pm';
 
 requires 'namespace::autoclean';
-requires 'Class::MOP';
+requires 'Class::Load';
 requires 'Moose';
 requires 'Moose::Exporter';
 requires 'Moose::Role';

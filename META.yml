@@ -20,7 +20,7 @@ no_index:
     - inc
     - t
 requires:
-  Class::MOP: 0
+  Class::Load: 0
   Moose: 0
   Moose::Exporter: 0
   Moose::Role: 0
@@ -28,4 +28,4 @@ requires:
   namespace::autoclean: 0
 resources:
   license: http://opensource.org/licenses/mit-license.php
-version: 0.07
+version: 0.08
